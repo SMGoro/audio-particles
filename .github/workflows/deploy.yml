@@ -35,7 +35,7 @@ jobs:
       run: |
         # Restore last modified time
         git ls-files -z | while read -d '' path; do touch -d "$(git log -1 --format="@%ct" "$path")" "$path"; done
-        npm run dev
+        npm run build
 
     - name: Deploy Github
       uses: peaceiris/actions-gh-pages@v3
